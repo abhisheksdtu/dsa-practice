@@ -5,3 +5,7 @@ https://leetcode.com/problems/binary-tree-postorder-traversal/submissions/115829
 https://leetcode.com/problems/binary-tree-inorder-traversal/description/
 https://leetcode.com/problems/binary-tree-inorder-traversal/submissions/1158263511/
 https://leetcode.com/problems/binary-tree-inorder-traversal/submissions/1158289628/
+
+https://leetcode.com/problems/balanced-binary-tree/description/
+https://leetcode.com/problems/balanced-binary-tree/submissions/1159786900/
+https://leetcode.com/problems/balanced-binary-tree/submissions/1159807864/
