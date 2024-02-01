@@ -1,3 +1,7 @@
+/*
+ * BRUTE
+ */
+
 class Solution {
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
         int[] res = new int[nums1.length];
@@ -32,6 +36,33 @@ class Solution {
             }
 
             st.push(arr[i]);
+        }
+
+        return res;
+    }
+}
+
+/*
+ * OPTIMAL
+ */
+
+ class Solution {
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        int[] res = new int[nums1.length];
+        Stack<Integer> st = new Stack<>();
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int num : nums2) {
+            while (!st.isEmpty() && num > st.peek()) {
+                map.put(st.pop(), num);
+            }
+            st.push(num);
+        }
+
+        int c = 0;
+        for (int num : nums1) {
+            res[c] = map.getOrDefault(num, -1);
+            c++;
         }
 
         return res;
