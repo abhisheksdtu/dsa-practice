@@ -1,3 +1,7 @@
 https://leetcode.com/problems/majority-element-ii/description/
 https://leetcode.com/problems/majority-element-ii/submissions/1172386080/
 https://leetcode.com/problems/majority-element-ii/submissions/1172393368/
+
+https://leetcode.com/problems/powx-n/description/
+https://leetcode.com/problems/powx-n/submissions/1172405609/
+https://leetcode.com/problems/powx-n/submissions/1172516757/
