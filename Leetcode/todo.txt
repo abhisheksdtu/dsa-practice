@@ -1,3 +1,3 @@
-https://leetcode.com/problems/majority-element/description/
-https://leetcode.com/problems/majority-element/submissions/1172382568/
-https://leetcode.com/problems/majority-element/submissions/1172382120/
+https://leetcode.com/problems/majority-element-ii/description/
+https://leetcode.com/problems/majority-element-ii/submissions/1172386080/
+https://leetcode.com/problems/majority-element-ii/submissions/1172393368/
