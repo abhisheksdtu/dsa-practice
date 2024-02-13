@@ -1,2 +1,5 @@
 https://leetcode.com/problems/invert-binary-tree/description/
 https://leetcode.com/problems/invert-binary-tree/submissions/1174149837/
+
+https://leetcode.com/problems/search-in-a-binary-search-tree/description/
+https://leetcode.com/problems/search-in-a-binary-search-tree/submissions/1174170772/
