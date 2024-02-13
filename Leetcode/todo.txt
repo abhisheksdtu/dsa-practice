@@ -1,2 +1,2 @@
-https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/
-https://leetcode.com/problems/flatten-binary-tree-to-linked-list/submissions/1173465667/
+https://leetcode.com/problems/invert-binary-tree/description/
+https://leetcode.com/problems/invert-binary-tree/submissions/1174149837/
