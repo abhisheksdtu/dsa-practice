@@ -4,6 +4,9 @@ import java.util.Arrays;
 
 public class Main {
 
+    // We can use Set also but it'll give us Space Complexity of O(N)
+    // For ASCII characters we can use an array of length 128. S.C. - O(1)
+    // TC - O(N)
     public static boolean brute(String s) {
         boolean characterSet[] = new boolean[128];
 
@@ -14,10 +17,12 @@ public class Main {
             }
             characterSet[idx] = true;
         }
-        
+
         return true;
     }
 
+    // SC - O(N)
+    // TC - O(N Log N)
     public static boolean optimized(String s) {
         char[] str = s.toCharArray();
         Arrays.sort(str);
