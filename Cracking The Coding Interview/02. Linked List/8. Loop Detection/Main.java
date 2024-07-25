@@ -1,29 +1,30 @@
 /*
- * Given two (singly) linked lists, determine if the two lists intersect. Return the intersecting node.
- * Note that the intersection is defined based on reference, not value. That is, if the kth node of the first linked list is the exact same node (by reference) as the jth node of the second linked list, then they are intersecting. 
+ * Given a circular linked list, implement an algorithm that returns the node at the beginning of the loop.
+ * DEFINITION - Circular linked list: A (corrupt) linked list in which a node's next pointer points to an earlier node, so as to make a loop in the linked list.
+ * EXAMPLE
+ * Input: A -> B -> C -> D -> E -> C [the same C as earlier]
+ * Output: C 
  */
 
 import java.util.*;
 
 public class Main {
     /*
-     * TC - O(N + M)
+     * TC - O(N)
      * SC - O(N)
      */
-    public static Node bruteIntersecting(Node m, Node n) {
+    public static Node bruteLoopDetection(Node head) {
+        if (head == null || head.next == null) {
+            return null;
+        }
         Set<Node> set = new HashSet<>();
 
-        Node node = m;
-        while (node != null) {
-            set.add(node);
-            node = node.next;
-        }
-
-        node = n;
+        Node node = head;
         while (node != null) {
             if (set.contains(node)) {
                 return node;
             }
+            set.add(node);
             node = node.next;
         }
 
@@ -31,45 +32,52 @@ public class Main {
     }
 
     /*
-     * TC - O(N + M)
+     * TC - O(N)
      */
-    public static Node optimizedIntersecting(Node m, Node n) {
-        if (m == null || n == null) {
+    public static Node optimizedLoopDetection(Node head) {
+        if (head == null || head.next == null) {
             return null;
         }
 
-        Node p1 = m;
-        Node p2 = n;
+        Node slow = head;
+        Node fast = head;
 
-        while (p1 != p2) {
-            p1 = p1 != null ? p1.next : n;
-            p2 = p2 != null ? p2.next : m;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                // LOOP DETECTED
+                break;
+            }
         }
 
-        return p1;
+        slow = head;
+
+        while (slow != fast) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        return slow;
     }
 
     public static void main(String[] args) {
-        Node common = new Node(8);
-        common.next = new Node(10);
+        int[] list = { 3, 6, 9, 12, 15 };
+        Node head = createLinkedList(list);
 
-        int[] list1 = { 3, 6, 9 };
-        Node head1 = createLinkedList(list1);
-        appendNode(head1, common);
+        Node loopStart = head.next.next;
+        Node current = head;
+        while (current.next != null) {
+            current = current.next;
+        }
+        current.next = loopStart;
 
-        int[] list2 = { 5 };
-        Node head2 = createLinkedList(list2);
-        appendNode(head2, common);
+        Node loopNode = optimizedLoopDetection(head);
 
-        printLinkedList(head1);
-        printLinkedList(head2);
-
-        Node intersectingNode = optimizedIntersecting(head1, head2);
-
-        if (intersectingNode != null) {
-            System.out.println("Intersecting node data: " + intersectingNode.data);
+        if (loopNode != null) {
+            System.out.println("Loop starts at node with data: " + loopNode.data);
         } else {
-            System.out.println("No intersection");
+            System.out.println("No loop detected");
         }
     }
 
